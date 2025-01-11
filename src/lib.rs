@@ -48,13 +48,12 @@ impl ThreadPool {
 
 impl Drop for ThreadPool {
     fn drop(&mut self) {
+        drop(self.sender.take());
+
         for worker in &mut self.workers {
-            drop(self.sender.take());
+            println!("Shutting down worker {}", worker.id);
 
             if let Some(thread) = worker.thread.take() {
-                println!("Shutting down worker {}", worker.id);
-                // XXX: this won't work as of now, because the threads loop infinitely and will
-                // never join....
                 thread.join().unwrap();
             }
         }
