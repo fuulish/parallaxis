@@ -49,6 +49,8 @@ impl Drop for ThreadPool {
             println!("Shutting down worker {}", worker.id);
 
             if let Some(thread) = worker.thread.take() {
+                // XXX: this won't work as of now, because the threads loop infinitely and will
+                // never join....
                 thread.join().unwrap();
             }
         }
