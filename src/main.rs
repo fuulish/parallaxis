@@ -7,7 +7,7 @@ use std::{
     time::Duration,
 };
 
-use rust_thread_pool::ThreadPool;
+use parallaxis::ThreadPool;
 
 fn handle_connection(mut stream: TcpStream) -> String {
     let buf_reader = BufReader::new(&stream);

@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "rust_thread_pool"
+name = "parallaxis"
 version = "0.1.0"
