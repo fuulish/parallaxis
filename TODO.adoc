@@ -1,2 +1,3 @@
 * [] combine with async frontend and queue handling
 * [] use shared counter to limit total number of threads instead of maintaining a pool (as alternative)
+* [] make use of broccoli (https://github.com/densumesh/broccoli?tab=readme-ov-file) for personal learning
